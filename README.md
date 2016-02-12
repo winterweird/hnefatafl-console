@@ -1,5 +1,11 @@
 Hnefatafl (also known as Viking chess, among other names) in a Windows cmd prompt.
 
+SCREENSHOTS:
+  * http://puu.sh/n5nZd/328a226219.jpg (the initial setup)
+  * http://puu.sh/n5o1w/7504563734.png (defender piece ready to capture)
+  * http://puu.sh/n5o5j/785f1f23c2.png (defender piece has captured)
+  * http://puu.sh/n5oaE/eb1852560b.png (attacker got an easy victory)
+
 Hnefatafl is the precedent of chess in Europe, dating back to around 800 AD. In this board game, you play as one of two sides - the defenders, whose goal is to get their king to safety, and the attackers, whose goal is to capture the king by surrounding him.
 
 The gameplay itself is pretty simple. This version is played out on an 11x11 grid, although there are versions which are played on a 9x9 or even a 7x7 grid. The pieces move like rooks in chess, in other words horizontally or vertically. The players alternate turns of moving a single piece, starting with the attackers (x).
