@@ -48,7 +48,7 @@ char hasEnemy(int dir, TILE board[], int index) {
             break;
     }
     char player = t.piece - (t.piece==3);
-    if (l.piece && !ownsPiece(player, l) || !l.piece && l.attr != 0) {
+    if (l.piece && !ownsPiece(player, l) || !l.piece && !(l.attr == 0 || l.attr == 3)) {
         return 1;
     }
     
@@ -67,6 +67,7 @@ char moveValidity(TILE t1, TILE t2, TILE board[]) {
     if (posEqual(t1, t2)) return 1; // same spot as we're currently on
     if (!isInLine(t1, t2)) return 2; // tile 2 not directly in line with tile 1
     if (t2.piece != 0) return 3; // tile 2 occupied already
+    if (t2.attr == 3) return 8; // tutorial special space
     if (t2.attr != 0 && !(t1.piece==3)) return 4; // this is a "king only" space
     TILE temp = t1;
     while (!posEqual(temp, t2)) {
@@ -130,6 +131,25 @@ TILE selectTile(TILE board[], TILE last) {
     } while (! (cmd == 13 || cmd == ' ')); // return key or space can be used to select tile
     return board[y*11+x];
 }
+TILE selectPiece(TILE board[], char currentPlayer, TILE last) {
+    do {
+        last = selectTile(board, last);
+        if (tileEmpty(last)) break;
+        printErrorString(ownsPiece(currentPlayer, last) ? 0 : 6);
+    } while (!ownsPiece(currentPlayer, last));
+    return last;
+}
+TILE selectNewPosition(TILE board[], TILE last, int* r) {
+    TILE g;
+    do {
+        g = selectTile(board, last);
+        if (tileEmpty(g)) break;
+        *r = moveValidity(last, g, board);
+        if (*r==1) break;
+        printErrorString(*r);
+    } while (*r != 0);
+    return g;
+}
 void printErrorString(int errorCode) {
     int oldx = getXPos(), oldy = getYPos();
     jumpTo(0, 15);
@@ -157,6 +177,9 @@ void printErrorString(int errorCode) {
             break;
         case 7:
             printf("Abort game? (Y/N)");
+            break;
+        case 8:
+            printf("You are not allowed to select this tile.\n");
     }
     jumpTo(oldx, oldy);
 }

@@ -1,7 +1,6 @@
 #include "board.h"
 #include "wnd.h"
 #include <stdio.h>
-//#include <conio.h>
 
 #define WHITE FOREGROUND_RED|FOREGROUND_GREEN|FOREGROUND_BLUE
 #define INTENSE FOREGROUND_INTENSITY
@@ -12,7 +11,7 @@
 #define DOWN 3
 
 const char pieceChar[] = " xoK";
-const char attrChar[] = " EH";
+const char attrChar[] = " EH ";
 
 void initBoard(TILE board[]) {
     char p[121] = {

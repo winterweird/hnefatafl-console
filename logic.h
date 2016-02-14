@@ -12,5 +12,8 @@ char moveValidity(TILE, TILE, TILE[]); // Returns 0 if the move is a valid move,
 void printErrorString(int);            // Print the string corresponding to the code returned by moveValidity
 void makeMove(TILE, TILE, TILE[]);     // Move the piece at tile1 to tile2, removing any enemies captured in the process
 char hasWinner(TILE[], TILE);          // Returns 0 if there is no winner, or 1 or 2 depending on who the winner was
+TILE selectTile(TILE[], TILE);         // Navigate the board using WASD or arrow keys, return the chosen tile at space/return
+TILE selectPiece(TILE[], char, TILE);  // Tile selection process for phase 1 (piece selection)
+TILE selectNewPosition(TILE[], TILE, int*); // Tile selection process for phase 2 (selection of tile to move to)
 
 #endif /* LOGIC_H */

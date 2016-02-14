@@ -1,6 +1,6 @@
-LIBFILES = wnd.o board.o logic.o gamemodes.o
-MAIN = test1.c
-OUTPUT = test01
+LIBFILES = wnd.o board.o logic.o gamemodes.o menu.o
+MAIN = main.c
+OUTPUT = hnefatafl
 FLAGS = -std=c99
 
 build: $(OUTPUT)

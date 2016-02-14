@@ -17,7 +17,6 @@ int xsp(int);                            // Returns the X value of the screen co
 int ysp(int);                            // Returns the Y value of the screen coordinate corresponding to the given tile.y-value
 void printBoard(TILE[]);                 // Print the board according to the given character representations
 void printIntense(TILE);                 // Print a tile's character representation in intense white
-TILE selectTile(TILE[], TILE);           // Navigate the board using WASD or arrow keys, return the chosen tile at space/return
 TILE getRelativeTile(int, TILE, TILE[]); // Return the tile to the LEFT, RIGHT, UP or DOWN relative to the given tile
 
 #endif /* BOARD_H */
