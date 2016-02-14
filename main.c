@@ -46,10 +46,27 @@ int main() {
                 break;
             default:
                 // will be the last option, always, hence just put "default"
+                winner = -1; // we don't want to handle the winner printing underneath
                 playing = 0;
         }
         if (winner > -1) {
-            // handle
+            jumpTo(0, 15);
+            if (!winner) {
+                printf("There was no winner of the previous game.");
+            }
+            else if (who) {
+                if (who == winner) {
+                    printf("Congratulations! You won!");
+                }
+                else {
+                    printf("You lost. Better luck next time!");
+                }
+            }
+            else {
+                printf("The one who played as %s won this game.", winner==1?"attackers":"defenders");
+            }
+            printf("\n\n");
+            pauseForKeyPress();
         }
     }
 }
