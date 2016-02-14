@@ -136,7 +136,8 @@ void tutorial() {
     jumpTo(0,17);
     printf("Select the piece on the board and move it horizontally or vertically.\n");
     printf("You can move the cursor with the arrow keys or W, A, S and D, and you can\n");
-    printf("select a space on the board using the spacebar or Enter button.");
+    printf("select a space on the board using the spacebar or Enter button.\n\n");
+    printf("Note how the piece lights up with a more intense white once selected.");
     do {
         jumpTo(0,1);
         printBoard(board);
@@ -156,7 +157,9 @@ void tutorial() {
     printf("Good! "); pauseForKeyPress();
     printf("Now it's time to learn how to capture. Pieces in this game can\n");
     printf("be captured if they are surrounded on two opposite sides. Move the\n");
-    printf("attacking piece in place in order to capture the defending piece.");
+    printf("attacking piece in place in order to capture the defending piece.\n\n");
+    printf("If you select the wrong piece by accident, you can select it again to\n");
+    printf("remove the selection.");
     do {
         jumpTo(0,1);
         printBoard(board);
@@ -176,8 +179,7 @@ void tutorial() {
     printf("There you go! "); pauseForKeyPress();
     printf("However, if a player voluntarily moves his own piece into a situation\n");
     printf("where it is surrounded, the piece isn't captured.\n\n");
-    printf("Move the defending piece in between the two attacking ones to observe\n");
-    printf("this.");
+    printf("Move the defending piece in between the two attacking ones to observe this.");
     do {
         jumpTo(0,1);
         printBoard(board);
@@ -236,7 +238,7 @@ void tutorial() {
     printf("There are four exits in the game, one in each corner of the board. The\n");
     printf("goal of the defending player is to get the king to one of these exits.\n");
     printf("If the king gets to safety, the defenders win the game.\n\n");
-    printf("Move the king to one of the exits.");
+    printf("Move the king to one of the exits. You need to reselect it for each move.");
     do {
         jumpTo(0,1);
         printBoard(board);
